@@ -3,7 +3,7 @@
 Lightweight single page app for Django using only Jquery and [Page.js](https://github.com/visionmedia/page.js) (7.8 Ko). 
 
 - Fast: load the page once and update the content using rest
-- Easy: straigthforward vanila js, no npm and friends steps
+- Old school friendly: straigthforward vanila js, no npm and friends steps
 
 ## Install
 
