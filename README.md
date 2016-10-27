@@ -1,7 +1,7 @@
 # Django Spages
 
-Lightweight single page app for Django on top of [Page.js](https://github.com/visionmedia/page.js) (7.8 Ko) and
-[Promise.js](https://github.com/stackp/promisejs) (2,3 Ko). 
+Lightweight single page app for Django on top of [Page.js](https://github.com/visionmedia/page.js) (7.8 Ko) for
+the client-side routing, and [Promise.js](https://github.com/stackp/promisejs) (2,3 Ko) for the async ajax calls. 
 
 - *Fast*: load the page once and update the content using rest
 - *Old school friendly*: straigthforward, no npm and friends build steps
