@@ -7,9 +7,12 @@ Lightweight single page app for Django using only Jquery and [Page.js](https://g
 
 ## Install
 
-``pip install djangorestframework``
+  ```bash
+pip install djangorestframework
+pip install git+https://github.com/synw/django-spages.git
+  ```
 
-Clone this repo and migrate.
+Migrate.
 
 Installed apps:
 
