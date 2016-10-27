@@ -16,13 +16,8 @@ class Command(BaseCommand):
         routes = []
         i = 1
         for page in pages:
-            if page.url == "/":
-                url = reverse('spages-home')
-            else:
-                url = reverse('spages-page', kwargs={'url':page.url})
-            url = url.replace('%2F','')
             rest_url = reverse("spages-rest", kwargs={'pk':page.pk})
-            val = "page('"+page.url+"', function(ctx, next) { loadPage('"+url+"','"+rest_url+"') } );"
+            val = "page('"+page.url+"', function(ctx, next) { loadPage('"+rest_url+"') } );"
             routes.append(val)
             print str(i)+": "+page.url
             i += 1

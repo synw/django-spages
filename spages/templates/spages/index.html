@@ -4,23 +4,19 @@
 {% block title %}{{ page.title }}{% endblock %}
 
 {% block content %}
-<script type="text/javascript" src="https://cdn.jsdelivr.net/page.js/1.6.3/page.min.js"></script>
 <div id="pagecontent"></div>
 <script type="text/javascript">
-function loadPage( resturl, url ) { 
-    var container = '#pagecontent';
-	$.ajax({
-		type: "GET",
-		dataType: "json",
-		url: url,
-		success: function (data) {
-			$(container).html(data.content);
-			},
-		error: function(xhr, textStatus, errorThrown) {
-	        console.log("Error: "+errorThrown+xhr.status+xhr.responseText);
-	        }
-    	});
-	}
+{% include "spages/lib/page.js" %}
+{% include "spages/lib/promise.min.js" %}
+function loadPage(resturl){
+	var container = 'pagecontent';
+	promise.get(resturl,{},{"Accept":"application/json"}).then(function(error, data, xhr) {
+	    if (error) {console.log('Error ' + xhr.status);return;}
+	    content = JSON.parse(data).content;
+	    console.log(content+"\n"+resturl);
+	    document.getElementById(container).innerHTML = content;
+	});
+}
 {% include "spages/auto/routes.js" %}
 page();
 </script>
