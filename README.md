@@ -37,5 +37,5 @@ from the server to update content.
 
 ## Why?
 
-The goal is to get faster render speed for pages, and to impove the user experience,
+The goal is to get faster render speed for pages, and to improve the user experience,
 specialy the ones that use low bandwidth connections.
