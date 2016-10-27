@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+<script type="text/javascript" src="https://cdn.jsdelivr.net/page.js/1.6.3/page.min.js"></script>
+<div id="pagecontent"></div>
+<script type="text/javascript">
+function loadPage( resturl, url ) { 
+    var container = '#pagecontent';
+	$.ajax({
+		type: "GET",
+		dataType: "json",
+		url: url,
+		success: function (data) {
+			$(container).html(data.content);
+			},
+		error: function(xhr, textStatus, errorThrown) {
+	        console.log("Error: "+errorThrown+xhr.status+xhr.responseText);
+	        }
+    	});
+	}
+{% include "spages/auto/routes.js" %}
+page();
+</script>
+{% endblock %}
