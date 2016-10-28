@@ -17,7 +17,16 @@ class SPageView(TemplateView):
         url = self.kwargs['url']
         if not url.startswith('/'):
             url = "/"+url
-        context['page'] = get_object_or_404(SPage, url=url, published=True)
+        root_node, created = SPage.objects.get_or_create(url="/")
+        if created is True:
+            root_node.title = "Home"
+            root_node.save()
+        nodes = root_node.get_descendants(include_self=True).filter(published=True)
+        context['nodes'] = nodes
+        try:
+            context['page'] = nodes.filter(url=url)[0]
+        except:
+            raise Http404
         return context
 
 
@@ -27,6 +36,20 @@ class HomeSPageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(HomeSPageView, self).get_context_data(**kwargs)
         context['page'] = get_object_or_404(SPage, url="/", published=True)
+        return context
+    
+    
+class SitemapView(TemplateView):
+    template_name = "spages/sitemap.html"
+    
+    def get_context_data(self, **kwargs):
+        context = super(SitemapView, self).get_context_data(**kwargs)
+        root_node, created = SPage.objects.get_or_create(url="/")
+        if created is True:
+            root_node.title = "Home"
+            root_node.save()
+        nodes = root_node.get_descendants(include_self=True).filter(published=True)
+        context['nodes'] = nodes
         return context
 
 

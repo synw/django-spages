@@ -3,6 +3,16 @@
 
 {% block title %}{{ page.title }}{% endblock %}
 
+{% block editbtn %}
+	{% if perms.spages.change_spage %}
+		<div style="position:absolute;top;10px;right:10px;z-index1000">
+			<a href="{% url 'admin:spages_page_change' page.pk %}?m=fs">
+				{% trans 'Edit' %}
+			</a>
+		</div>
+	{% endif %}
+{% endblock %}
+
 {% block content %}
 <div id="pagecontent"></div>
 <script type="text/javascript">
