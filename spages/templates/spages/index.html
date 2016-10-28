@@ -6,8 +6,8 @@
 {% block content %}
 <div id="pagecontent"></div>
 <script type="text/javascript">
-{% include "spages/lib/page.js" %}
-{% include "spages/lib/promise.min.js" %}
+{% include "spages/spagelib/page.js" %}
+{% include "spages/spagelib/promise.min.js" %}
 function loadPage(resturl){
 	var container = 'pagecontent';
 	promise.get(resturl,{},{"Accept":"application/json"}).then(function(error, data, xhr) {
