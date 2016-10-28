@@ -18,8 +18,8 @@ Migrate.
 Installed apps:
 
   ```python
-`"rest_framework",`
-`"spages",`
+"rest_framework",
+"spages",
   ```
 
 Urls: append this at the end of urls.py:
