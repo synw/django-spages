@@ -9,7 +9,7 @@ the client-side routing, and [Promise.js](https://github.com/stackp/promisejs) (
 ## Install
 
   ```bash
-pip install djangorestframework
+pip install djangorestframework codemirror2 django-ckeditor
 pip install git+https://github.com/synw/django-spages.git
   ```
 
@@ -19,13 +19,25 @@ Installed apps:
 
   ```python
 "rest_framework",
+"ckeditor",
+"ckeditor_uploader",
+"codemirror2",
 "spages",
   ```
 
 Urls: append this at the end of urls.py:
 
   ```python
+url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 urlpatterns.append(url(r'^',include('spages.urls')))
+  ```
+  
+## Options
+
+To use the Codemirror editor instead of the default Ckeditor add this setting:
+
+  ```python
+SPAGES_CODE_MODE = True
   ```
 
 ## Usage
@@ -45,5 +57,4 @@ specialy the ones that use low bandwidth connections.
 
 ## Todo
 
-- Better admin interface
 - Manage page titles in browser tab
