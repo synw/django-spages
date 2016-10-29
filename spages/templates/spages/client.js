@@ -1,20 +1,3 @@
-{% extends "base.html" %}
-{% load staticfiles i18n %}
-
-{% block title %}{{ page.title }}{% endblock %}
-
-{% block editbtn %}
-	{% if perms.spages.change_spage %}
-		<div style="position:absolute;top;10px;right:10px;z-index1000">
-			<a href="/admin/spages/spage/{{ page.pk }}/change/?m=fs">
-				{% trans 'Edit' %}
-			</a>
-		</div>
-	{% endif %}
-{% endblock %}
-
-{% block content %}
-<script type="text/javascript">
 {% include "spages/spagelib/page.js" %}
 {% include "spages/spagelib/promise.min.js" %}
 function loadPage(resturl){
@@ -34,4 +17,3 @@ function loadPage(resturl){
 {% include "spages/auto/routes.js" %}
 page();
 </script>
-{% endblock %}
