@@ -21,7 +21,7 @@ class SPage(MPTTModel, Seo):
     title = models.CharField(_(u'Title'), max_length=200)
     content = models.TextField(_(u'Content'), blank=True)
     template_name = models.CharField(_(u'Template name'), max_length=120, blank=True,
-        help_text=_(u'If no template name is provided "vue_page/default.html" will be used.')
+        help_text=_(u'If no template name is provided "spages/index.html" will be used.')
     )
     parent = TreeForeignKey('self', null=True, blank=True, related_name=u'children', verbose_name=_(u'Parent page'))
     edited = models.DateTimeField(editable=False, null=True, auto_now=True, verbose_name=_(u'Edited'))
