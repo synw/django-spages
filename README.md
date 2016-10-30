@@ -13,8 +13,6 @@ pip install djangorestframework codemirror2 django-ckeditor django-mptt-graph
 pip install git+https://github.com/synw/django-spages.git
   ```
 
-Migrate.
-
 Installed apps:
 
   ```python
@@ -26,7 +24,9 @@ Installed apps:
 "spages",
   ```
 
-Urls: append this at the end of urls.py:
+Migrate.
+
+Urls:
 
   ```python
 url(r'^ckeditor/', include('ckeditor_uploader.urls')),
@@ -55,7 +55,7 @@ Just link to your pages normaly in the navigation and the routes will be applied
 from the server to update content.
 
 If you need to extend the basic js handlers on page create templates: ``spages/extra_handlers.js``: this js will be
-executed before fetching the data. And ``spages/extra_async_handlers.js``: this will be executed in the async loop
+executed before fetching the data. And ``spages/extra_async_handlers.js``: this will be executed within the async loop
 after fetching content.
 
 ## Why?
