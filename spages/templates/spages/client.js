@@ -1,4 +1,4 @@
-<script src="text/javascript">
+<script type="text/javascript">
 {% include "spages/spagelib/page.js" %}
 {% include "spages/spagelib/promise.min.js" %}
 function loadPage(resturl){
