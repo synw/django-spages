@@ -1,4 +1,3 @@
-<script type="text/javascript">
 {% include "spages/spagelib/page.js" %}
 {% include "spages/spagelib/promise.min.js" %}
 function loadPage(resturl){
@@ -15,6 +14,14 @@ function loadPage(resturl){
 	});
 	return
 }
+function loadHtml(resturl, title){
+	var container = 'content';
+	promise.get(resturl).then(function(error, data, xhr) {
+	    if (error) {console.log('Error ' + xhr.status);return;}    
+	    top.document.title = title;
+	    top.document.getElementById(container).innerHTML = data;
+	});
+	return
+}
 {% include "spages/auto/routes.js" %}
 page();
-</script>
