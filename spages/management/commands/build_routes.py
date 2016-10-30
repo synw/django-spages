@@ -21,7 +21,7 @@ class Command(BaseCommand):
             routes.append(val)
             print str(i)+": "+page.url
             i += 1
-        routes_str = '\n'.join(routes)
+        routes_str = '{% include "spages/extra_routes.js" %}\n'+'\n'.join(routes)
         # check directories
         dirpath = settings.BASE_DIR+"/templates/spages"
         if not os.path.isdir(dirpath) is True:
