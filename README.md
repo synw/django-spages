@@ -9,8 +9,7 @@ the client-side routing, and [Promise.js](https://github.com/stackp/promisejs) (
 ## Install
 
   ```bash
-pip install djangorestframework django-codemirror2 django-ckeditor django-mptt-graph
-pip install git+https://github.com/synw/django-spages.git
+pip install djangorestframework django-codemirror2 django-ckeditor django-mptt-graph django-spages
   ```
 
 Installed apps:
