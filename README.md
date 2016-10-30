@@ -30,7 +30,7 @@ Urls: append this at the end of urls.py:
 
   ```python
 url(r'^ckeditor/', include('ckeditor_uploader.urls')),
-urlpatterns.append(url(r'^',include('spages.urls')))
+url(r'^',include('spages.urls'))
   ```
   
 ## Options
