@@ -24,6 +24,7 @@ setup(
   zip_safe=False,
   install_requires=[
         'pytz',
+        'django-mptt',
         "djangorestframework",
         'django-ckeditor',
         'django-codemirror2',
