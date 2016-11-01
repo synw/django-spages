@@ -29,5 +29,6 @@ setup(
         'django-ckeditor',
         'django-codemirror2',
         "django-mptt-graph",
+        "jsonfield"
     ],
 )
