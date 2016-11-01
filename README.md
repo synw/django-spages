@@ -31,6 +31,7 @@ Urls:
 
   ```python
 url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+url(r'^graph/', include('mptt_graph.urls')),
 url(r'^',include('spages.urls'))
   ```
   
