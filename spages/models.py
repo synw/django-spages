@@ -59,6 +59,7 @@ class SPage(MPTTModel, Seo):
     
     def save(self, *args, **kwargs):
         super(SPage, self).save(*args, **kwargs)
-        self.update_routes()
-        self.update_navlinks()
+        if self.level == 1:
+            self.update_routes()
+            self.update_navlinks()
         return
