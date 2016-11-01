@@ -47,12 +47,18 @@ class SPage(MPTTModel, Seo):
         call_command('build_routes', verbosity=0)
         return
     
+    def update_navlinks(self):
+        call_command('build_navlinks', verbosity=0)
+        return
+    
     def delete(self, *args, **kwargs):
         super(SPage, self).delete(*args, **kwargs)
         self.update_routes()
+        self.update_navlinks()
         return
     
     def save(self, *args, **kwargs):
         super(SPage, self).save(*args, **kwargs)
         self.update_routes()
+        self.update_navlinks()
         return
