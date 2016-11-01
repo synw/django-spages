@@ -28,7 +28,7 @@ class SPageAdminForm(forms.ModelForm):
                                                              'theme':'blackboard',
                                                              #'fullScreen':'true',
                                                              },
-                                                             script_template='codemirror2/codemirror_script_alapage.html',
+                                                             script_template='codemirror2/codemirror_script_spages.html',
                                                              modes=['css', 'xml', 'javascript', 'htmlmixed'],
                                                              )
                                   
