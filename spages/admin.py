@@ -21,7 +21,7 @@ class SPageAdmin(MPTTModelAdmin):
     
     def get_fieldsets(self, request, obj=None):
         super(SPageAdmin, self).get_fieldsets(request, obj)
-        base_fields = (('url', 'parent'),'title', 'template_name','published')
+        base_fields = (('url', 'title'),'parent', 'template_name','published')
         fieldsets = (
             (None, {
                 'fields': ('content',)
