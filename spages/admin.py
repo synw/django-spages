@@ -33,5 +33,9 @@ class SPageAdmin(MPTTModelAdmin):
                 'classes': ('collapse',),
                 'fields': ('seo_keywords','seo_description')
             }),
+            (_(u'Extra data'), {
+                'classes': ('collapse',),
+                'fields': ('extra_data',)
+            }),
         )
         return fieldsets

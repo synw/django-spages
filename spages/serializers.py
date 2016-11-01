@@ -8,4 +8,4 @@ class SPageSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = SPage
-        fields = read_only_fields = ["content", "title"]
+        fields = read_only_fields = ["content", "title", "extra_data"]
