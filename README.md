@@ -20,6 +20,7 @@ Installed apps:
 "ckeditor_uploader",
 "codemirror2",
 "mptt_graph",
+"jsoneditor",
 "spages",
   ```
 

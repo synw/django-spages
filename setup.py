@@ -29,6 +29,7 @@ setup(
         'django-ckeditor',
         'django-codemirror2',
         "django-mptt-graph",
-        "jsonfield"
+        "jsonfield",
+        "git+git://github.com/nnseva/django-jsoneditor.git",
     ],
 )
