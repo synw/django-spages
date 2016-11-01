@@ -30,6 +30,5 @@ setup(
         'django-codemirror2',
         "django-mptt-graph",
         "jsonfield",
-        "git+git://github.com/nnseva/django-jsoneditor.git",
     ],
 )

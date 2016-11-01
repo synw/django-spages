@@ -10,6 +10,7 @@ the client-side routing, and [Promise.js](https://github.com/stackp/promisejs) (
 
   ```bash
 pip install django-spages
+pip install "git+git://github.com/nnseva/django-jsoneditor.git"
   ```
 
 Installed apps:

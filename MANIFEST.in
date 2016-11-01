@@ -1,4 +1,5 @@
 recursive-include spages/management *
 recursive-include spages/migrations *
+recursive-include spages/static *
 recursive-include spages/templates *
 recursive-include spages/templatetags *
