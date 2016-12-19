@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import collections
 from django.core.management import call_command
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
@@ -30,7 +29,7 @@ class SPage(MPTTModel, Seo):
     created = models.DateTimeField(editable=False, null=True, auto_now_add=True, verbose_name=_(u'Created'))
     editor = models.ForeignKey(USER_MODEL, editable = False, related_name='+', null=True, on_delete=models.SET_NULL, verbose_name=_(u'Edited by'))   
     published = models.BooleanField(default=True, verbose_name=_(u'Published'))
-    extra_data = JSONField(blank=True, default={}, load_kwargs={'object_pairs_hook': collections.OrderedDict}, verbose_name=_(u'Extra data'))
+    extra_data = JSONField(blank=True, default={}, verbose_name=_(u'Extra data'))
     
     class Meta:
         verbose_name = _(u'Page')
@@ -59,7 +58,7 @@ class SPage(MPTTModel, Seo):
     
     def save(self, *args, **kwargs):
         super(SPage, self).save(*args, **kwargs)
+        self.update_routes()
         if self.level == 1:
-            self.update_routes()
             self.update_navlinks()
         return
