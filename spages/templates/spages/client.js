@@ -11,7 +11,7 @@ function loadPage(resturl){
 	    top.document.title = title;
 	    top.document.getElementById(container).innerHTML = content;
 	    {% include "spages/extra_async_handlers.js" %}
-	});
+	}).then(setTimeout(function(){ eval(document.getElementById("runscript").innerHTML); }, 500));
 	return
 }
 function loadHtml(resturl, title){
@@ -20,7 +20,7 @@ function loadHtml(resturl, title){
 	    if (error) {console.log('Error ' + xhr.status);return;}    
 	    top.document.title = title;
 	    top.document.getElementById(container).innerHTML = data;
-	});
+	}).then(setTimeout(function(){ eval(document.getElementById("runscript").innerHTML); }, 500));
 	return
 }
 {% include "spages/auto/routes.js" %}
