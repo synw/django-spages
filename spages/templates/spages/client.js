@@ -23,5 +23,14 @@ function loadHtml(resturl, title){
 	}).then(setTimeout(function(){ eval(document.getElementById("runscript").innerHTML); }, 500));
 	return
 }
+function loadHtmlIn(resturl, title, block){
+	var container = block;
+	promise.get(resturl).then(function(error, data, xhr) {
+	    if (error) {console.log('Error ' + xhr.status);return;}    
+	    top.document.title = title;
+	    top.document.getElementById(container).innerHTML = data;
+	}).then(setTimeout(function(){ eval(document.getElementById("runscript").innerHTML); }, 500));
+	return
+}
 {% include "spages/auto/routes.js" %}
 page();
