@@ -37,13 +37,17 @@ class HomeSPageView(TemplateView):
         context = super(HomeSPageView, self).get_context_data(**kwargs)
         context['page'] = get_object_or_404(SPage, url="/", published=True)
         return context
-    
-    
+
+
 class SitemapView(TemplateView):
+    template_name = "spages/index.html"
+    
+    
+class SitemapRestView(TemplateView):
     template_name = "spages/sitemap.html"
     
     def get_context_data(self, **kwargs):
-        context = super(SitemapView, self).get_context_data(**kwargs)
+        context = super(SitemapRestView, self).get_context_data(**kwargs)
         root_node, created = SPage.objects.get_or_create(url="/")
         if created is True:
             root_node.title = "Home"
