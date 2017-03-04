@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from django.shortcuts import redirect
 from django.utils.translation import ugettext_lazy as _
 from django.contrib import admin
 from mptt.admin import MPTTModelAdmin
@@ -39,3 +40,11 @@ class SPageAdmin(MPTTModelAdmin):
             }),
         )
         return fieldsets
+    
+    def response_change(self, request, obj):
+        # for inline editing
+        if '_inline_' in request.POST:
+            url = obj.url.replace("%2F", "/")
+            return redirect('spages-page', url=url)
+        else:
+            return super(SPageAdmin, self).response_change(request, obj)
