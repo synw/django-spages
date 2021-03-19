@@ -1,6 +1,6 @@
 pytz
 django-mptt
-djangorestframework==3.5.4
+djangorestframework==3.11.2
 django-ckeditor
 django-codemirror2
 django-mptt-graph
